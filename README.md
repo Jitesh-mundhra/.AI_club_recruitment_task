@@ -115,23 +115,6 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 ![XGBoost](https://img.shields.io/badge/XGBoost-green)
 ![Sklearn](https://img.shields.io/badge/Scikit--learn-orange)
 
-## Project Structure
-├── data/
-│   ├── economic_full.csv
-│   └── df_merged.csv
-├── notebooks/
-│   └── demand_forecasting.ipynb
-├── models/
-│   └── xgboost_demand_mw.pkl
-└── README.md
-
-## How to Run
-    # Install dependencies
-    pip install pandas numpy scikit-learn xgboost matplotlib seaborn scipy joblib
-
-    # Run notebook
-    jupyter notebook notebooks/demand_forecasting.ipynb
-
 ## Key Findings
 - XGBoost achieves 2.54% MAPE, beating industry standard of 5%
 - Electricity demand strongly driven by GDP growth and urbanization
