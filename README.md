@@ -7,8 +7,8 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 ## Results
 | Model | MAPE |
 |---|---|
-| XGBoost | 2.54% ✅ |
-| Random Forest | 4.64% |
+| XGBoost | 4.68% ✅ |
+| Random Forest | 7.05% |
 
 ## 🗂️ Dataset
 
@@ -26,7 +26,7 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 - T&D losses %
 - Net migration (log transformed)
 - Labor force total
-- Lag features (1h, 3h, 1w)
+- Lag features (1h,2h,3h,1w)
 
 
 ---
