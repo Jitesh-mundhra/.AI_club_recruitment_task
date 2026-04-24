@@ -19,14 +19,16 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 | World Bank (`economic_full.csv`) | Macroeconomic & demographic indicators for Bangladesh | 2014–2025 |
 
 ## Features Used
-- GDP per capita (log transformed)
-- Urban population %
-- Industry value added % GDP
-- Employment in industry %
-- T&D losses %
-- Net migration (log transformed)
-- Labor force total
+- previous weekyly,daily,last hour demand data
+- other Energy generating sources data
 - Lag features (1h,2h,3h,1w)
+- GDP per capita
+- Urban population %
+- relative demand of every hour
+- Employment in industry %
+- Apparent Temp(C)
+- Net migration (log transformed)
+- population of agglomeration of more than 1 million
 
 
 ---
@@ -57,9 +59,10 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 |---------|-------------|-----|
 | `hour_sin`, `hour_cos` | Circular encoding of hour (24h cycle) | Prevents discontinuity between hour 23 and 0 |
 | `month_sin`, `month_cos` | Circular encoding of month (12-month cycle) | Smooth seasonal transitions |
-| `hour_lag_1h` | Demand 1 hour ago | Short-term momentum |
-| `hour_lag_3h` | Demand 3 hours ago | Pre-peak patterns |
-| `hour_lag_1w` | Demand 168 hours ago | Same hour last week — weekly seasonality |
+| `demandr_lag_1h` | Demand 1 hour ago | Short-term momentum |
+| `demand_lag_24h` | Demand 24 hours ago | Pre-peak patterns |
+| `demand_lag_1w` | Demand 168 hours ago | Same hour last week — weekly seasonality |
+| 'generation_lag_2h' | Generation 2 hour ago | To support the momentum pattern |
 | `relative_demand_h` | Normalized avg demand by hour (0–1) | Encodes typical daily load curve shape |
 
 ### Weather Features
