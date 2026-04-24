@@ -124,16 +124,16 @@ The goal was to predict future demand accurately so utilities can optimize gener
 > surprisingly high, reflecting Assam/Northeast India's dependence on
 > grid interconnections for supply balancing.
 ---
-### Why XGBoost Outperformed Random Forest
-# 1. Sequential Learning (Boosting)
+## Why XGBoost Outperformed Random Forest
+### 1. Sequential Learning (Boosting)
 XGBoost builds trees sequentially, where each new tree learns from previous errors. Random Forest builds trees independently.
-# 2. Better Capture of Complex Relationships
+### 2. Better Capture of Complex Relationships
 Electricity demand depends on nonlinear interactions and XGBoost captures it better.
-# 3. Strong Regularization
+### 3. Strong Regularization
 XGBoost includes regularization techniques that reduce overfitting and improve generalization.
-# 4. Better Handling of Missing Values
+### 4. Better Handling of Missing Values
 XGBoost performs efficiently even when some features contain missing values.
-# 5. Lower Bias + Variance
+### 5. Lower Bias + Variance
 Random Forest mainly reduces variance, while XGBoost reduces both bias and variance.
 
 ## 🛠️ Tech Stack
