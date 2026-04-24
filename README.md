@@ -81,12 +81,12 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 ### Economic Features
 | Feature | Transformation | Signal |
 |---------|---------------|--------|
-| `GDP per capita` | Log transform | Income → appliance ownership → demand |
+| `GDP per capita` | — | Income → appliance ownership → demand |
 | `Urban_population_%` | Derived (urban/total × 100) | Urbanization rate |
 | `Net migration` | Signed log transform | Population redistribution |
 | `Population in urban agglomerations > 1M %` | — | Metro demand concentration |
 | `Industry value added % GDP` | — | Industrial electricity load |
-| `T&D losses %` | — | Grid efficiency over time |
+| `Electric power transfer and distribution losses(% of output)` | — | supply and loss data |
 | `Employment in industry %` | — | Industrial demand proxy |
 
 ---
