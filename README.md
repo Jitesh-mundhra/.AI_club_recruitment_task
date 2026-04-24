@@ -1,8 +1,8 @@
 # Electricity Demand Forecasting for Bangladesh 🔌
 
 ## Overview
-A machine learning pipeline to forecast electricity demand (MW) 
-for Bangladesh using socioeconomic and time series indicators (2014–2025).
+This project focuses on *next-hour electricity demand forecasting* using historical power system data.  
+The goal was to predict future demand accurately so utilities can optimize generation planning, reduce shortages, and improve grid stability.
 
 ## Results
 | Model | MAPE |
@@ -124,12 +124,25 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 > surprisingly high, reflecting Assam/Northeast India's dependence on
 > grid interconnections for supply balancing.
 ---
+### Why XGBoost Outperformed Random Forest
+# 1. Sequential Learning (Boosting)
+XGBoost builds trees sequentially, where each new tree learns from previous errors. Random Forest builds trees independently.
+# 2. Better Capture of Complex Relationships
+Electricity demand depends on nonlinear interactions and XGBoost captures it better.
+# 3. Strong Regularization
+XGBoost includes regularization techniques that reduce overfitting and improve generalization.
+# 4. Better Handling of Missing Values
+XGBoost performs efficiently even when some features contain missing values.
+# 5. Lower Bias + Variance
+Random Forest mainly reduces variance, while XGBoost reduces both bias and variance.
 
-
-## Tech Stack
+## 🛠️ Tech Stack
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![XGBoost](https://img.shields.io/badge/XGBoost-green)
 ![Sklearn](https://img.shields.io/badge/Scikit--learn-orange)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=plotly&logoColor=white)
 
 ## Key Findings
 - XGBoost achieves 4.68% MAPE, beating industry standard of 5%
