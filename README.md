@@ -93,23 +93,36 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 
 ## 🔍 Key Insights from Feature Importance
 
-| Rank | Feature | Insight |
-|------|---------|---------|
-| 1 | `relative_demand_h` | Daily load curve shape is the strongest repeating pattern |
-| 2 | `apparent_temperature` | AC/fan load dominates Bangladesh summers |
-| 3 | `hour_lag_1w` | Weekly rhythm — same hour last week is highly predictive |
-| 4 | `hour_sin/cos` | Time-of-day cycle |
-| 5 | `GDP_log` | Captures long-term demand growth trend |
-| 6 | `hour_lag_1h` | Short-term momentum |
-| 7 | `month_sin/cos` | Seasonal demand pattern |
-| 8 | `Urban_population_%` | Urbanization-driven demand growth |
-| 9 | `T&D losses %` | Grid efficiency changes over time |
-| 10 | `Employment in industry %` | Industrial load proxy |
+| Rank | Feature | Importance | Insight |
+|------|---------|------------|---------|
+| 1 | `demand_lag_24h` | 0.28 | Yesterday same hour — strongest repeating daily pattern |
+| 2 | `demand_lag_1h` | 0.22 | Short-term momentum drives hourly prediction |
+| 3 | `demand_lag_1w` | 0.11 | Weekly rhythm — same hour last week is highly predictive |
+| 4 | `hour_sin` | 0.065 | Time-of-day cycle (sine component) |
+| 5 | `hour_cos` | 0.065 | Time-of-day cycle (cosine component) |
+| 6 | `india_bheramara_hvdc` | 0.058 | Cross-border power import signal |
+| 7 | `gas` | 0.035 | Fuel mix affects generation availability |
+| 8 | `generation_lag_2h` | 0.028 | Recent generation output as demand proxy |
+| 9 | `apparent_temperature` | 0.020 | AC/fan load during hot seasons |
+| 10 | `coal` | 0.015 | Base load generation source |
+| 11 | `load_shedding` | 0.013 | Suppressed demand correction |
+| 12 | `Net_migration_log` | 0.012 | Population shift drives long-term demand growth |
+| 13 | `liquid_fuel` | 0.011 | Peaking plant usage indicator |
+| 14 | `india_tripura` | 0.010 | Regional cross-border import signal |
+| 15 | `solar` | 0.010 | Renewable generation offset on demand |
 
-> Short-term temporal features dominate hourly prediction.
-> Economic indicators capture the long-term upward trend
-> from ~8,000 MW to ~14,000+ MW over 2015–2025.
 
+> **Lag features dominate** — `demand_lag_24h`, `demand_lag_1h`, and `demand_lag_1w`
+> together account for ~61% of total feature importance, confirming that
+> electricity demand is highly autocorrelated.
+
+> **Engineered features** (`monthly_avg`, `weekday_avg`, `peak_season_avg`, `weekend_avg`)
+> have low individual importance but provide useful seasonal baselines
+> that complement the lag-based signals.
+
+> **Cross-border imports** (`india_bheramara_hvdc`, `india_tripura`) rank
+> surprisingly high, reflecting Assam/Northeast India's dependence on
+> grid interconnections for supply balancing.
 ---
 
 
@@ -119,8 +132,8 @@ for Bangladesh using socioeconomic and time series indicators (2014–2025).
 ![Sklearn](https://img.shields.io/badge/Scikit--learn-orange)
 
 ## Key Findings
-- XGBoost achieves 2.54% MAPE, beating industry standard of 5%
-- Electricity demand strongly driven by GDP growth and urbanization
+- XGBoost achieves 4.68% MAPE, beating industry standard of 5%
+- Electricity demand strongly driven by lag features and urbanization
 - Lag features critical for capturing short-term demand patterns
 
 ## Author
